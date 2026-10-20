@@ -1,15 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application simple de gestion des tâches.">
     <title>Ma To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h1>Ma To-Do List</h1>
-        <p>Mon premier projet de développement web.</p>
+    <header class="site-header">
+        <p class="logo">TaskFlow</p>
+        <p>Mon espace de travail</p>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Ma To-Do List</h1>
+            <p>Organise tes tâches et avance à ton rythme.</p>
+        </section>
+
+        <section class="task-section" aria-labelledby="task-title">
+            <h2 id="task-title">Ajouter une tâche</h2>
+
+            <form id="task-form">
+                <label for="task-title-input">Titre de la tâche</label>
+                <input
+                    type="text"
+                    id="task-title-input"
+                    name="task"
+                    placeholder="Ex. : Apprendre JavaScript"
+                    required
+                >
+
+                <button type="submit">Ajouter</button>
+            </form>
+        </section>
+
+        <section class="task-section" aria-labelledby="list-title">
+            <h2 id="list-title">Mes tâches</h2>
+            <p>Aucune tâche pour le moment.</p>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <p>Projet d'apprentissage HTML, CSS et JavaScript.</p>
+    </footer>
 </body>
 </html>
