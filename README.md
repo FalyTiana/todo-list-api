@@ -1,75 +1,70 @@
-# TaskFlow — Application de gestion des tâches
+# TaskFlow — Gestionnaire de tâches
 
-## Présentation
+TaskFlow est un projet d'apprentissage du développement web. Il permet de gérer des tâches et d'apprendre progressivement les bases du frontend, de JavaScript et des API REST.
 
-TaskFlow est une application web de gestion des tâches développée dans le cadre de mon apprentissage du développement web. Elle permet d'ajouter, d'afficher et de supprimer des tâches grâce à HTML, CSS et JavaScript.
+## Fonctionnalités du frontend
 
-## Fonctionnalités
+- Ajouter une tâche
+- Afficher la liste des tâches
+- Modifier le titre d'une tâche
+- Marquer une tâche comme terminée
+- Supprimer une tâche
+- Enregistrer les tâches dans le navigateur avec `localStorage`
+- Conserver un affichage adapté aux écrans mobiles
 
-- Ajouter une tâche à partir d'un formulaire.
-- Afficher les tâches dans une liste.
-- Supprimer une tâche individuellement.
-- Enregistrer automatiquement les tâches avec `localStorage`.
-- Restaurer les tâches après l'actualisation de la page.
-- Afficher un message lorsque la liste est vide.
-- Adapter l'affichage aux écrans mobiles.
-- Modifier le titre d'une tâche.
-- Marquer une tâche comme terminée.
-- Conserver l'état des tâches dans localStorage.
+## API REST — Séance 11
+
+Un premier serveur API a été créé avec Node.js et Express.
+
+Routes disponibles :
+
+| Méthode | Route | Fonction |
+|---|---|---|
+| GET | `/` | Afficher un message de bienvenue |
+| GET | `/api/tasks` | Récupérer les tâches |
+
+Le serveur utilise également le middleware CORS et accepte les données JSON.
 
 ## Technologies utilisées
 
-- **HTML5** : structure de la page.
-- **CSS3** : mise en forme et affichage responsive.
-- **JavaScript** : interactions et gestion des tâches.
-- **localStorage** : stockage local des tâches dans le navigateur.
-- **Git et GitHub** : gestion des versions et hébergement du code source.
+- HTML5
+- CSS3
+- JavaScript
+- Node.js
+- Express
+- CORS
+- Git et GitHub
 
-## Installation et lancement
+## Installation et lancement de l'API
 
-1. Cloner le dépôt :
+Prérequis : Node.js et npm.
 
-   ```bash
-   git clone https://github.com/FalyTiana/todo-list-api.git
-   ```
+1. Ouvrir un terminal dans le dossier `api`.
+2. Installer les dépendances :
 
-2. Ouvrir le dossier du projet :
+   `npm.cmd install`
 
-   ```bash
-   cd todo-list-api
-   ```
+3. Démarrer le serveur :
 
-3. Ouvrir `index.html` dans un navigateur web, ou utiliser l'extension Live Server de VS Code.
+   `node server.js`
 
-Aucune installation de dépendances n'est nécessaire pour la version actuelle.
+4. Tester les routes :
 
-## Structure du projet
+   - `http://localhost:3000/`
+   - `http://localhost:3000/api/tasks`
 
-```text
-todo-list-api/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+## État du projet
 
-## Stockage des données
+- [x] Gestion des tâches côté navigateur
+- [x] Persistance avec localStorage
+- [x] Première API REST avec Express
+- [x] Récupération des tâches avec GET
+- [ ] Création de tâches avec POST
+- [ ] Modification et suppression via l'API
+- [ ] Persistance des données dans une base de données
 
-Les tâches sont enregistrées dans le `localStorage` du navigateur. Elles restent disponibles après une actualisation de la page, sur le même navigateur et pour la même origine.
-
-À ce stade, les données ne sont pas stockées dans une base de données distante et ne sont pas synchronisées entre plusieurs appareils.
-
-## Améliorations prévues
-
-- Mettre en place une API REST.
-- Ajouter une base de données.
-- Étudier l'authentification des utilisateurs.
-
+**Note :** les tâches de l'API sont actuellement stockées en mémoire. Elles sont réinitialisées au redémarrage du serveur.
 
 ## Auteur
 
-Projet personnel d'apprentissage du développement web — Faly Tiana.
-
-## Licence
-
-Projet pédagogique. Aucune licence spécifique n'est définie pour le moment.
+FalyTiana — Projet personnel d'apprentissage du développement web.
