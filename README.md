@@ -13,6 +13,9 @@ TaskFlow est une application web de gestion des tâches développée dans le cad
 - Restaurer les tâches après l'actualisation de la page.
 - Afficher un message lorsque la liste est vide.
 - Adapter l'affichage aux écrans mobiles.
+- Modifier le titre d'une tâche.
+- Marquer une tâche comme terminée.
+- Conserver l'état des tâches dans localStorage.
 
 ## Technologies utilisées
 
@@ -58,11 +61,10 @@ Les tâches sont enregistrées dans le `localStorage` du navigateur. Elles reste
 
 ## Améliorations prévues
 
-- Modifier une tâche existante.
-- Marquer une tâche comme terminée.
 - Mettre en place une API REST.
 - Ajouter une base de données.
 - Étudier l'authentification des utilisateurs.
+
 
 ## Auteur
 
