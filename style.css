@@ -101,3 +101,70 @@ button:focus-visible {
         padding: 18px;
     }
 }
+
+
+
+/* Liste des tâches */
+#list-title {
+    margin-bottom: 20px;
+}
+
+#list-title + p {
+    color: #6d665d;
+}
+
+#list-title + p[hidden] {
+    display: none;
+}
+
+#list-title ~ ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#list-title ~ ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    background-color: #faf7f2;
+    border: 1px solid #e5ddd1;
+    border-radius: 10px;
+    min-width: 0;
+}
+
+#list-title ~ ul li span {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+#list-title ~ ul li button {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    background-color: #8b3434;
+    font-size: 0.9rem;
+}
+
+#list-title ~ ul li button:hover {
+    background-color: #702828;
+    opacity: 1;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 480px) {
+    #list-title ~ ul li {
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    #list-title ~ ul li button {
+        padding: 8px 10px;
+    }
+}
