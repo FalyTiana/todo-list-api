@@ -44,3 +44,29 @@ app.listen(PORT, () => {
         `API TaskFlow disponible sur http://localhost:${PORT}`
     );
 });
+
+
+app.post("/api/tasks", (req, res) => {
+    const { title } = req.body;
+
+    // Vérifier le titre reçu
+    if (typeof title !== "string" || title.trim() === "") {
+        return res.status(400).json({
+            message: "Le titre de la tâche est obligatoire."
+        });
+    }
+
+    // Créer la nouvelle tâche
+    const newTask = {
+        id: tasks.length > 0
+            ? Math.max(...tasks.map(task => task.id)) + 1
+            : 1,
+        title: title.trim(),
+        completed: false
+    };
+
+    tasks.push(newTask);
+
+    // Renvoyer la tâche créée
+    res.status(201).json(newTask);
+});

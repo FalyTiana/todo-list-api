@@ -68,3 +68,46 @@ Prérequis : Node.js et npm.
 ## Auteur
 
 FalyTiana — Projet personnel d'apprentissage du développement web.
+
+## API REST — Serveur Express
+
+Le serveur API est développé avec Node.js et Express.
+
+### Routes disponibles
+
+| Méthode | Route | Fonction |
+|---|---|---|
+| GET | `/` | Afficher un message de bienvenue |
+| GET | `/api/tasks` | Récupérer toutes les tâches |
+| POST | `/api/tasks` | Créer une nouvelle tâche |
+
+### Création d'une tâche
+
+La route `POST /api/tasks` reçoit un titre au format JSON.
+
+Exemple de données envoyées :
+
+```json
+{
+  "title": "Apprendre la méthode POST"
+}
+```
+
+Le serveur vérifie que le titre est valide, attribue un identifiant à la tâche et renvoie la tâche créée avec le statut HTTP `201 Created`.
+
+Une requête avec un titre vide ou invalide renvoie le statut HTTP `400 Bad Request`.
+
+**Limitation actuelle :** les tâches de l'API sont stockées dans un tableau en mémoire. Elles sont réinitialisées lorsque le serveur redémarre.
+
+### Lancement du serveur
+
+Depuis le dossier `api` :
+
+```powershell
+node server.js
+```
+
+Routes à tester :
+
+- `http://localhost:3000/`
+- `http://localhost:3000/api/tasks`
